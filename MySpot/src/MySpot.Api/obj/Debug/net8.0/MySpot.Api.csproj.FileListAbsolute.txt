@@ -31,3 +31,11 @@ C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpo
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\obj\Debug\net8.0\MySpot.Api.pdb
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\obj\Debug\net8.0\MySpot.Api.genruntimeconfig.cache
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\obj\Debug\net8.0\ref\MySpot.Api.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\obj\Debug\net8.0\MySpot.Api.sourcelink.json
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Application.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Application.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Core.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Infrastructure.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api\bin\Debug\net8.0\MySpot.Infrastructure.pdb

@@ -1,7 +1,14 @@
-var builder = WebApplication.CreateBuilder(args);
+using MySpot.Application;
+using MySpot.Core;
+using MySpot.Infrastructure;
 
-// Add services to the container.
-builder.Services.AddControllers();
+var builder = WebApplication.CreateBuilder(args);
+builder.Services
+    .AddCore()
+    .AddApplication()
+    .AddInfrastructure()
+    .AddControllers();
+
 var app = builder.Build();
 
 app.MapControllers();

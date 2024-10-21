@@ -1,6 +1,6 @@
 //@MySpot.Api_HostAddress = http://localhost:5000
 @url = http://localhost:5000
-@reservationId = 0de82e40-07dd-4d8b-b5b3-f54f64dc84d6
+@reservationId = 7b6d8185-ce8e-4fa9-9d44-90bae102eeb7
 @parkingSpotId = 00000000-0000-0000-0000-000000000001
 
 
@@ -19,7 +19,7 @@ Content-Type: application/json
     "parkingSpotId": "{{parkingSpotId}}",
     "employeeName": "John Doe",
     "licensePlate": "XYZ123",
-    "date": "2024-10-17"
+    "date": "2024-10-22"
 }
 
 ###

@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MySpot.Api.DTO.ReservationDTO, MySpot.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MySpot.Application.DTO.ReservationDTO, MySpot.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "MySpot.Api.Commands.CreateReservation",
+        "Type": "MySpot.Application.Commands.CreateReservation",
         "IsRequired": true
       }
     ],
@@ -51,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MySpot.Api.DTO.ReservationDTO",
+        "Type": "MySpot.Application.DTO.ReservationDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -76,7 +76,7 @@
       },
       {
         "Name": "command",
-        "Type": "MySpot.Api.Commands.ChangeReservationLicensePlate",
+        "Type": "MySpot.Application.Commands.ChangeReservationLicensePlate",
         "IsRequired": true
       }
     ],
