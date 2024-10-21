@@ -158,3 +158,11 @@ C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\System.Management.dll
 C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Management.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\obj\Debug\net8.0\My.Spot.Tests.Unit.sourcelink.json
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Application.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Application.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Core.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Infrastructure.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\tests\My.Spot.Tests.Unit\bin\Debug\net8.0\MySpot.Infrastructure.pdb

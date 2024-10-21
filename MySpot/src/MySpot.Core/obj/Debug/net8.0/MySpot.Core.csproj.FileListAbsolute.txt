@@ -1,0 +1,13 @@
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\bin\Debug\net8.0\MySpot.Core.deps.json
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\bin\Debug\net8.0\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\bin\Debug\net8.0\MySpot.Core.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.AssemblyInfoInputs.cache
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.AssemblyInfo.cs
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.csproj.CoreCompileInputs.cache
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.sourcelink.json
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\refint\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.pdb
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\ref\MySpot.Core.dll
+C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Core\obj\Debug\net8.0\MySpot.Core.csproj.AssemblyReference.cache

@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySpot.Api.Commands;
-using MySpot.Api.DTO;
-using MySpot.Api.Entities;
-using MySpot.Api.Services;
-using MySpot.Api.ValueObjects;
+using MySpot.Application.Commands;
+using MySpot.Application.DTO;
+using MySpot.Application.Services;
 
 namespace MySpot.Api.Controllers
 {
@@ -11,26 +9,23 @@ namespace MySpot.Api.Controllers
     [Route("reservations")]
     public class ReservationsController : ControllerBase
     {
-        private static readonly Clock Clock = new();
-        private static readonly ReservationsServices _service = new(new List<WeeklyParkingSpot>()
+        private readonly IReservationsServices _reservationsServices;
+
+        public ReservationsController(IReservationsServices reservationsServices) 
         {
-           new WeeklyParkingSpot(Guid.Parse("00000000-0000-0000-0000-000000000001"), new Week(Clock.Current()),"P1"),
-           new WeeklyParkingSpot(Guid.Parse("00000000-0000-0000-0000-000000000002"), new Week(Clock.Current()),"P2"),
-           new WeeklyParkingSpot(Guid.Parse("00000000-0000-0000-0000-000000000003"), new Week(Clock.Current()),"P3"),
-           new WeeklyParkingSpot(Guid.Parse("00000000-0000-0000-0000-000000000004"), new Week(Clock.Current()),"P4"),
-           new WeeklyParkingSpot(Guid.Parse("00000000-0000-0000-0000-000000000005"), new Week(Clock.Current()),"P5"),
-        }, new Clock());
+            _reservationsServices = reservationsServices;
+        }
 
         [HttpGet]
         public ActionResult<IEnumerable<ReservationDTO>> Get()
         {
-            return Ok(_service.GetAllWeekly());
+            return Ok(_reservationsServices.GetAllWeekly());
         }
 
         [HttpGet("{id:guid}")]
         public ActionResult<ReservationDTO> GetById(Guid id)
         {
-            var reservation = _service.Get(id);
+            var reservation = _reservationsServices.Get(id);
             if(reservation == null)
             {
                 return NotFound();
@@ -42,7 +37,7 @@ namespace MySpot.Api.Controllers
         public ActionResult Post(CreateReservation command) 
         {
 
-            var id = _service.Create(command with { ReservationId = Guid.NewGuid()});
+            var id = _reservationsServices.Create(command with { ReservationId = Guid.NewGuid()});
             if(id == null)
             {
                 return BadRequest();
@@ -53,7 +48,7 @@ namespace MySpot.Api.Controllers
         [HttpPut("{id:guid}")]
         public ActionResult Put(Guid id,ChangeReservationLicensePlate command)
         {
-            if(_service.Update(command with { ReservationId = id}))
+            if(_reservationsServices.Update(command with { ReservationId = id}))
             {
                 return NoContent();
             }
@@ -64,7 +59,7 @@ namespace MySpot.Api.Controllers
         [HttpDelete("{id:guid}")]
         public ActionResult Delete (Guid id)
         {
-            if(_service.Delete(new DeleteReservation(id)))
+            if(_reservationsServices.Delete(new DeleteReservation(id)))
             {
                 return NoContent();
             }
