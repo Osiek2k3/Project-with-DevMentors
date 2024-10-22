@@ -1,6 +1,6 @@
 //@MySpot.Api_HostAddress = http://localhost:5000
 @url = http://localhost:5000
-@reservationId = 7b6d8185-ce8e-4fa9-9d44-90bae102eeb7
+@reservationId = 839ebcf7-4cdf-4861-a6a1-1cb547b91520
 @parkingSpotId = 00000000-0000-0000-0000-000000000001
 
 
@@ -26,7 +26,7 @@ Content-Type: application/json
 PUT {{url}}/reservations/{{reservationId}}
 Content-Type: application/json
 {
-    "licensePlate": "XYZ123"
+    "licensePlate": "XYZ1234"
 }
 
 ###

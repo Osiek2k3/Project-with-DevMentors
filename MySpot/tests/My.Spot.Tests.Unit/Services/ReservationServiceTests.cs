@@ -2,7 +2,7 @@
 using MySpot.Application.Commands;
 using MySpot.Application.Services;
 using MySpot.Core.Repositories;
-using MySpot.Infrastructure.Repositories;
+using MySpot.Infrastructure.DAL.Repositories;
 using Shouldly;
 
 namespace My.Spot.Tests.Unit.Services
