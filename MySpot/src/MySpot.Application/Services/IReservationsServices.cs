@@ -5,10 +5,10 @@ namespace MySpot.Application.Services
 {
     public interface IReservationsServices
     {
-        ReservationDTO Get(Guid id);
-        IEnumerable<ReservationDTO> GetAllWeekly();
-        Guid? Create(CreateReservation command);
-        bool Update(ChangeReservationLicensePlate command);
-        bool Delete(DeleteReservation command);
+        Task<ReservationDTO> GetAsync(Guid id);
+        Task<IEnumerable<ReservationDTO>> GetAllWeeklyAsync();
+        Task<Guid?> CreateAsync(CreateReservation command);
+        Task<bool> UpdateAsync(ChangeReservationLicensePlate command);
+        Task<bool> DeleteAsync(DeleteReservation command);
     }
 }
