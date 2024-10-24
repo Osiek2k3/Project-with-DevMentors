@@ -17,15 +17,15 @@ namespace MySpot.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<ReservationDTO>> Get()
+        public async Task<ActionResult<IEnumerable<ReservationDTO>>> Get()
         {
-            return Ok(_reservationsServices.GetAllWeekly());
+            return Ok(await _reservationsServices.GetAllWeeklyAsync());
         }
 
         [HttpGet("{id:guid}")]
-        public ActionResult<ReservationDTO> GetById(Guid id)
+        public async Task<ActionResult<ReservationDTO>> GetById(Guid id)
         {
-            var reservation = _reservationsServices.Get(id);
+            var reservation = await _reservationsServices.GetAsync(id);
             if(reservation == null)
             {
                 return NotFound();
@@ -34,10 +34,10 @@ namespace MySpot.Api.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(CreateReservation command) 
+        public async Task<ActionResult> Post(CreateReservation command) 
         {
 
-            var id = _reservationsServices.Create(command with { ReservationId = Guid.NewGuid()});
+            var id = await _reservationsServices.CreateAsync(command with { ReservationId = Guid.NewGuid()});
             if(id == null)
             {
                 return BadRequest();
@@ -46,9 +46,9 @@ namespace MySpot.Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public ActionResult Put(Guid id,ChangeReservationLicensePlate command)
+        public async Task<ActionResult> Put(Guid id,ChangeReservationLicensePlate command)
         {
-            if(_reservationsServices.Update(command with { ReservationId = id}))
+            if(await _reservationsServices.UpdateAsync(command with { ReservationId = id}))
             {
                 return NoContent();
             }
@@ -57,9 +57,9 @@ namespace MySpot.Api.Controllers
         }
 
         [HttpDelete("{id:guid}")]
-        public ActionResult Delete (Guid id)
+        public async Task<ActionResult> Delete (Guid id)
         {
-            if(_reservationsServices.Delete(new DeleteReservation(id)))
+            if(await _reservationsServices.DeleteAsync(new DeleteReservation(id)))
             {
                 return NoContent();
             }
