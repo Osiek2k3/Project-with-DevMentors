@@ -1,8 +1,10 @@
 ﻿using System.Runtime.CompilerServices;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MySpot.Application.Services;
 using MySpot.Infrastructure.DAL;
+using MySpot.Infrastructure.Exceptions;
 
 [assembly: InternalsVisibleTo("My.Spot.Tests.Unit")]
 namespace MySpot.Infrastructure
@@ -14,11 +16,20 @@ namespace MySpot.Infrastructure
             var section = configuration.GetSection("app");
             services.Configure<AppOptions>(section);
 
+            services.AddSingleton<ExceptionMiddleware>();
+
             services
                 .AddPostgres(configuration)
                 .AddSingleton<IClock, Clock>();
             
             return services;
+        }
+        public static WebApplication UseInfrastructure(this WebApplication app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+            app.MapControllers();
+
+            return app;
         }
     }
 }
