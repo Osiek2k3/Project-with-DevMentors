@@ -15,6 +15,8 @@ namespace MySpot.Infrastructure.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CleaningReservationConfiguration());
+            modelBuilder.ApplyConfiguration(new VehicleReservationConfiguration());
             modelBuilder.ApplyConfiguration(new ReservationConfiguration());
             modelBuilder.ApplyConfiguration(new WeeklyParkingSpotConfiguration());
         }
