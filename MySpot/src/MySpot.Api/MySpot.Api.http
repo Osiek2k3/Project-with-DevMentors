@@ -16,9 +16,10 @@ POST {{url}}/reservations/vehicle
 Content-Type: application/json
 {
     "parkingSpotId": "{{parkingSpotId}}",
-    "employeeName": "John Doe",
+    "employeeName": "zank Doe",
     "licensePlate": "XYZ123",
-    "date": "2024-10-29"
+    "capacity": 2,
+    "date": "2024-10-30"
 }
 ###
 POST {{url}}/reservations/cleaning
