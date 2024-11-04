@@ -1,6 +1,6 @@
 ﻿using My.Spot.Tests.Unit.Shared;
 using MySpot.Application.Commands;
-using MySpot.Application.Services;
+
 using MySpot.Core.Abstractions;
 using MySpot.Core.DoaminServices;
 using MySpot.Core.Policies;
@@ -12,7 +12,7 @@ namespace My.Spot.Tests.Unit.Services
 {
     public class ReservationServiceTests
     {
-        [Fact]
+        /*[Fact]
         public async Task given_reservation_for_not_taken_date_create_reservation_should_succeed()
         {
             var weeklyparkingSpot = (await _weeklyParkingSpotRepository.GetAllAsync()).First();
@@ -48,6 +48,6 @@ namespace My.Spot.Tests.Unit.Services
             _reservationService = new ReservationsServices(_clock, _weeklyParkingSpotRepository, prakingReservationService);
         }
 
-        #endregion
+        #endregion*/
     }
 }

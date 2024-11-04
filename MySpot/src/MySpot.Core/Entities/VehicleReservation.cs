@@ -5,7 +5,7 @@ namespace MySpot.Core.Entities
 {
     public sealed class VehicleReservation : Reservation
     {
-        public EmployeeName EmployeeName { get; private set; }
+        public EmployeeName? EmployeeName { get; private set; }
         public LicensePlate LicensePlate { get; private set; }
 
         private VehicleReservation()
