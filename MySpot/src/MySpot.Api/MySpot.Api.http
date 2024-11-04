@@ -1,39 +1,34 @@
 //@MySpot.Api_HostAddress = http://localhost:5000
 @url = http://localhost:5000
-@reservationId = 6a9e1471-5506-4b55-bdba-5c486ddd75fa
+@reservationId = b21d1c76-6890-452d-8151-365b1c538b03
 @parkingSpotId = 00000000-0000-0000-0000-000000000003
 
 
 ###
-GET {{url}}
-###
-GET {{url}}/reservations
+GET {{url}}/parking-spots
 
 ###
-GET {{url}}/reservations/{{reservationId}}
-###
-POST {{url}}/reservations/vehicle
+POST {{url}}/parking-spots/{{parkingSpotId}}/reservations/vehicle
 Content-Type: application/json
 {
-    "parkingSpotId": "{{parkingSpotId}}",
-    "employeeName": "zank Doe",
-    "licensePlate": "XYZ123",
-    "capacity": 2,
-    "date": "2024-10-30"
+    "employeeName": "janek Doe",
+    "licensePlate": "XYZ1235",
+    "capacity": 1,
+    "date": "2024-11-08"
 }
 ###
-POST {{url}}/reservations/cleaning
+POST {{url}}/parking-spots/reservations/cleaning
 Content-Type: application/json
 {
-    "date": "2024-10-30"
+    "date": "2024-11-07"
 }
 
 ###
-PUT {{url}}/reservations/{{reservationId}}
+PUT {{url}}/parking-spots/reservations/{{reservationId}}
 Content-Type: application/json
 {
-    "licensePlate": "XYZ1234"
+    "licensePlate": "XYZ98"
 }
 
 ###
-DELETE {{url}}/reservations/{{reservationId}}
+DELETE {{url}}/parking-spots/reservations/{{reservationId}}

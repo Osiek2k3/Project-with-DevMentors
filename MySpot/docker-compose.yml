@@ -1,3 +1,4 @@
+version: '3'
 services:
   postgres:
     image: postgres
@@ -10,7 +11,6 @@ services:
       - 5432:5432
     volumes:
       - postgres:/var/lib/postgresql/data
-
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
@@ -21,16 +21,6 @@ services:
       - 8080:80
     depends_on:
       - postgres
-  
-  myspot-api:
-    build:
-      context: ./src/
-      dockerfile: MySpot.Api/Dockerfile  
-    ports:
-      - "8081:80"
-    depends_on:
-      - postgres
-
 volumes:
   postgres:
     driver: local

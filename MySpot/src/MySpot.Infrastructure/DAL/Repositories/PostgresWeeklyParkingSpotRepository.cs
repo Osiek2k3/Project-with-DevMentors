@@ -19,13 +19,9 @@ namespace MySpot.Infrastructure.DAL.Repositories
                 .SingleOrDefaultAsync(x => x.Id == id);
 
         public async Task<IEnumerable<WeeklyParkingSpot>> GetAllAsync()
-        {
-            var res = await _dbContext.WeeklyParkingSpots
+            => await _dbContext.WeeklyParkingSpots
                .Include(x => x.Reservations)
                .ToListAsync();
-
-            return res.AsEnumerable();
-        }
 
         public async Task<IEnumerable<WeeklyParkingSpot>> GetByWeekAsync(Week week)
         => await _dbContext.WeeklyParkingSpots
@@ -49,12 +45,6 @@ namespace MySpot.Infrastructure.DAL.Repositories
         {
             _dbContext.Remove(weeklyParkingSpot);
             await _dbContext.SaveChangesAsync();
-        }
-
-        
-
-        
-
-        
+        } 
     }
 }
