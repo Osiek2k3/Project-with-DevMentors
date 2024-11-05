@@ -24,12 +24,12 @@ namespace MySpot.Application.Commands.Handlers
 
             _reservationService.ReserveParkingForCleaning(weeklyParkingSpots, new Date(command.date));
 
-            //var tasks = weeklyParkingSpots.Select(x => _repository.UpdateAsync(x));
-            //await Task.WhenAll(tasks);
-            foreach (var spot in weeklyParkingSpots)
+            var tasks = weeklyParkingSpots.Select(x => _repository.UpdateAsync(x));
+            await Task.WhenAll(tasks);
+            /*foreach (var spot in weeklyParkingSpots)
             {
                 await _repository.UpdateAsync(spot);
-            }
+            }*/
         }
     }
 
