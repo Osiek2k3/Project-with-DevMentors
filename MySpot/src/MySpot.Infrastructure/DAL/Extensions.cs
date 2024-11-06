@@ -1,12 +1,13 @@
-﻿using System.Runtime.CompilerServices;
+﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MySpot.Application.Abstractions;
-using MySpot.Application.Commands;
+
 using MySpot.Core.Repositories;
 using MySpot.Infrastructure.DAL.Decorators;
 using MySpot.Infrastructure.DAL.Repositories;
+using MySpot.Infrastructure.Logging.Decorators;
 
 namespace MySpot.Infrastructure.DAL
 {
@@ -24,7 +25,6 @@ namespace MySpot.Infrastructure.DAL
             services.AddScoped<IWeeklyParkingSpotRepository,PostgresWeeklyParkingSpotRepository>();
             services.AddScoped<IUnitOfWork,PostgresUnitOfWork>();
             services.TryDecorate(typeof(ICommandHandler<>), typeof(UnitOfWorkCommandHandlerDecorator<>));
-            services.TryDecorate(typeof(ICommandHandler<>), typeof(LoggingCommandHandlerDecorator<>));
             services.AddHostedService<DatabaseInitializer>();
 
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior",true);

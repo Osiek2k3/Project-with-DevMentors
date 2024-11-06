@@ -1,0 +1,216 @@
+2024-11-06 08:43:26.591 +01:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:43:26.627 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 08:43:26.644 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:43:26.653 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:43:26.656 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 08:43:26.666 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-06 08:43:26.772 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week"
+FROM "WeeklyParkingSpots" AS w
+2024-11-06 08:43:26.929 +01:00 [INF] Now listening on: http://localhost:5000
+2024-11-06 08:43:26.982 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 08:43:26.983 +01:00 [INF] Hosting environment: Development
+2024-11-06 08:43:26.984 +01:00 [INF] Content root path: C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api
+2024-11-06 08:47:30.974 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/parking-spots - null null
+2024-11-06 08:47:31.027 +01:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 08:47:31.066 +01:00 [INF] Route matched with {action = "Get", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MySpot.Application.DTO.ReservationDTO]]] Get(MySpot.Application.Queries.GetWeeklyParkingSpots) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-11-06 08:47:31.319 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."ParkingSpotId", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicensePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+ORDER BY w."Id"
+2024-11-06 08:47:31.355 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[MySpot.Core.Entities.WeeklyParkingSpot, MySpot.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MySpot.Application.DTO.WeeklyParkingSpotDto, MySpot.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-06 08:47:31.385 +01:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api) in 313.1405ms
+2024-11-06 08:47:31.388 +01:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 08:47:31.397 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/parking-spots - 200 null application/json; charset=utf-8 429.7034ms
+2024-11-06 08:51:49.176 +01:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:51:49.218 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 08:51:49.233 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:51:49.243 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 08:51:49.245 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 08:51:49.257 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-06 08:51:49.393 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week"
+FROM "WeeklyParkingSpots" AS w
+2024-11-06 08:51:49.524 +01:00 [INF] Now listening on: http://localhost:5000
+2024-11-06 08:51:49.574 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 08:51:49.576 +01:00 [INF] Hosting environment: Development
+2024-11-06 08:51:49.576 +01:00 [INF] Content root path: C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api
+2024-11-06 08:52:03.768 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/parking-spots - null null
+2024-11-06 08:52:03.816 +01:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 08:52:03.851 +01:00 [INF] Route matched with {action = "Get", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MySpot.Application.DTO.ReservationDTO]]] Get(MySpot.Application.Queries.GetWeeklyParkingSpots) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-11-06 08:52:04.137 +01:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."ParkingSpotId", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicensePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+ORDER BY w."Id"
+2024-11-06 08:52:04.168 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[MySpot.Core.Entities.WeeklyParkingSpot, MySpot.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MySpot.Application.DTO.WeeklyParkingSpotDto, MySpot.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-06 08:52:04.196 +01:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api) in 338.2212ms
+2024-11-06 08:52:04.198 +01:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 08:52:04.208 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/parking-spots - 200 null application/json; charset=utf-8 446.6837ms
+2024-11-06 09:21:45.274 +01:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:21:45.312 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 09:21:45.331 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:21:45.342 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:21:45.344 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 09:21:45.355 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-06 09:21:45.477 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week"
+FROM "WeeklyParkingSpots" AS w
+2024-11-06 09:21:45.593 +01:00 [INF] Now listening on: http://localhost:5000
+2024-11-06 09:21:45.641 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 09:21:45.642 +01:00 [INF] Hosting environment: Development
+2024-11-06 09:21:45.643 +01:00 [INF] Content root path: C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api
+2024-11-06 09:22:19.203 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/parking-spots - null null
+2024-11-06 09:22:19.239 +01:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 09:22:19.256 +01:00 [INF] Route matched with {action = "Get", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MySpot.Application.DTO.ReservationDTO]]] Get(MySpot.Application.Queries.GetWeeklyParkingSpots) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-11-06 09:22:19.398 +01:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."ParkingSpotId", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicensePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+ORDER BY w."Id"
+2024-11-06 09:22:19.419 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[MySpot.Core.Entities.WeeklyParkingSpot, MySpot.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MySpot.Application.DTO.WeeklyParkingSpotDto, MySpot.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-06 09:22:19.439 +01:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api) in 178.4033ms
+2024-11-06 09:22:19.441 +01:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 09:22:19.447 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/parking-spots - 200 null application/json; charset=utf-8 248.262ms
+2024-11-06 09:34:35.701 +01:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:34:35.737 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 09:34:35.752 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:34:35.760 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1 FROM pg_catalog.pg_class c
+    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='public' AND
+          c.relname='__EFMigrationsHistory'
+)
+2024-11-06 09:34:35.763 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2024-11-06 09:34:35.773 +01:00 [INF] No migrations were applied. The database is already up to date.
+2024-11-06 09:34:35.890 +01:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week"
+FROM "WeeklyParkingSpots" AS w
+2024-11-06 09:34:36.008 +01:00 [INF] Now listening on: http://localhost:5000
+2024-11-06 09:34:36.058 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 09:34:36.059 +01:00 [INF] Hosting environment: Development
+2024-11-06 09:34:36.060 +01:00 [INF] Content root path: C:\Users\Jakub.Malkowski\source\Project\Project-with-DevMentors\MySpot\src\MySpot.Api
+2024-11-06 09:34:36.444 +01:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/parking-spots/00000000-0000-0000-0000-000000000003/reservations/vehicle - application/json 116
+2024-11-06 09:34:36.478 +01:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-11-06 09:34:36.499 +01:00 [INF] Route matched with {action = "Post", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Post(System.Guid, MySpot.Application.Commands.ReserveParkingSpotForVehicle) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-11-06 09:34:36.611 +01:00 [INF] Started handling a command: reserve_parking_spot_for_vehicle
+2024-11-06 09:34:36.762 +01:00 [INF] Executed DbCommand (10ms) [Parameters=[@__week_0='?' (DbType = DateTimeOffset)], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."ParkingSpotId", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicensePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+WHERE w."Week" = @__week_0
+ORDER BY w."Id"
+2024-11-06 09:34:36.893 +01:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTimeOffset), @p3='?', @p4='?', @p5='?' (DbType = Guid), @p6='?', @p7='?' (DbType = Guid), @p11='?' (DbType = Guid), @p8='?' (DbType = Int32), @p9='?', @p10='?' (DbType = DateTimeOffset)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Reservations" ("Id", "Capacity", "Date", "EmployeeName", "LicensePlate", "ParkingSpotId", "Type", "WeeklyParkingSpotId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+UPDATE "WeeklyParkingSpots" SET "Capacity" = @p8, "Name" = @p9, "Week" = @p10
+WHERE "Id" = @p11;
+2024-11-06 09:34:36.916 +01:00 [INF] Completed handling a command: reserve_parking_spot_for_vehicle in "00:00:00.3050996" 
+2024-11-06 09:34:36.922 +01:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-11-06 09:34:36.926 +01:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api) in 423.0079ms
+2024-11-06 09:34:36.928 +01:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Post (MySpot.Api)'
+2024-11-06 09:34:36.936 +01:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/parking-spots/00000000-0000-0000-0000-000000000003/reservations/vehicle - 204 null null 495.7989ms
+2024-11-06 09:34:39.173 +01:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/parking-spots - null null
+2024-11-06 09:34:39.177 +01:00 [INF] Executing endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 09:34:39.183 +01:00 [INF] Route matched with {action = "Get", controller = "ParkingSpots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[MySpot.Application.DTO.ReservationDTO]]] Get(MySpot.Application.Queries.GetWeeklyParkingSpots) on controller MySpot.Api.Controllers.ParkingSpotsController (MySpot.Api).
+2024-11-06 09:34:39.245 +01:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT w."Id", w."Capacity", w."Name", w."Week", r."Id", r."Capacity", r."Date", r."ParkingSpotId", r."Type", r."WeeklyParkingSpotId", r."EmployeeName", r."LicensePlate"
+FROM "WeeklyParkingSpots" AS w
+LEFT JOIN "Reservations" AS r ON w."Id" = r."WeeklyParkingSpotId"
+ORDER BY w."Id"
+2024-11-06 09:34:39.254 +01:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+SelectListIterator`2[[MySpot.Core.Entities.WeeklyParkingSpot, MySpot.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[MySpot.Application.DTO.WeeklyParkingSpotDto, MySpot.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-06 09:34:39.263 +01:00 [INF] Executed action MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api) in 78.4473ms
+2024-11-06 09:34:39.265 +01:00 [INF] Executed endpoint 'MySpot.Api.Controllers.ParkingSpotsController.Get (MySpot.Api)'
+2024-11-06 09:34:39.266 +01:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/parking-spots - 200 null application/json; charset=utf-8 93.3825ms
