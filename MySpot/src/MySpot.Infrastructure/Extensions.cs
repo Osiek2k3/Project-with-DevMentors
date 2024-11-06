@@ -6,6 +6,7 @@ using MySpot.Application.Abstractions;
 using MySpot.Core.Abstractions;
 using MySpot.Infrastructure.DAL;
 using MySpot.Infrastructure.Exceptions;
+using MySpot.Infrastructure.Logging;
 using MySpot.Infrastructure.Time;
 
 [assembly: InternalsVisibleTo("My.Spot.Tests.Unit")]
@@ -15,9 +16,9 @@ namespace MySpot.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,IConfiguration configuration)
         {
+            services.AddControllers();
             var section = configuration.GetSection("app");
             services.Configure<AppOptions>(section);
-
             services.AddSingleton<ExceptionMiddleware>();
 
             services
@@ -30,6 +31,8 @@ namespace MySpot.Infrastructure
                 .AsImplementedInterfaces()
                 .WithScopedLifetime()
             );
+
+            services.AddCustomLogging();
 
             return services;
         }
