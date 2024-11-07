@@ -7,6 +7,7 @@ using MySpot.Core.Abstractions;
 using MySpot.Infrastructure.DAL;
 using MySpot.Infrastructure.Exceptions;
 using MySpot.Infrastructure.Logging;
+using MySpot.Infrastructure.Security;
 using MySpot.Infrastructure.Time;
 
 [assembly: InternalsVisibleTo("My.Spot.Tests.Unit")]
@@ -20,6 +21,7 @@ namespace MySpot.Infrastructure
             var section = configuration.GetSection("app");
             services.Configure<AppOptions>(section);
             services.AddSingleton<ExceptionMiddleware>();
+            services.AddSecurity();
 
             services
                 .AddPostgres(configuration)
