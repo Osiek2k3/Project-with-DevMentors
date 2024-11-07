@@ -8,3 +8,6 @@ obj/
 
 # Ignoruj foldery Visual Studio
 .vs/
+
+
+/src/MySpot.Api/logs/logs.txt
