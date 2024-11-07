@@ -8,6 +8,7 @@ namespace MySpot.Infrastructure.DAL
     {
         public DbSet<Reservation> Reservations{get;set;}
         public DbSet<WeeklyParkingSpot> WeeklyParkingSpots{get;set;}
+        public DbSet<User> Users {get;set;}
 
         public MySpotDbContext(DbContextOptions<MySpotDbContext> dbContextOptions) : base(dbContextOptions)
         {
@@ -19,6 +20,7 @@ namespace MySpot.Infrastructure.DAL
             modelBuilder.ApplyConfiguration(new VehicleReservationConfiguration());
             modelBuilder.ApplyConfiguration(new ReservationConfiguration());
             modelBuilder.ApplyConfiguration(new WeeklyParkingSpotConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
         }
 
     }
