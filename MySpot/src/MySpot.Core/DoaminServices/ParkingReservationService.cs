@@ -39,12 +39,9 @@ internal sealed class ParkingReservationService : IParkingReservationService
         foreach(var parkingSpot in allParkingSpots)
         {
             var reservationsForSameDate = parkingSpot.Reservations.Where(x => x.Date == date);
-
             parkingSpot.RemoveReservations(reservationsForSameDate);
-
-            var capacity = WeeklyParkingSpot.MaxCapacity;
-            var cleaningReservation = new CleaningReservation(ReservationId.Create(), parkingSpot.Id, date);
-            parkingSpot.AddReservation(cleaningReservation, new Date(_clock.Current()));
+            parkingSpot.AddReservation(new CleaningReservation(ReservationId.Create(), date),
+                new Date(_clock.Current()));
         }
     }
 

@@ -12,12 +12,11 @@ namespace MySpot.Infrastructure.DAL.Configurations
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id)
                 .HasConversion(x => x.Value, x => new ReservationId(x));
-            builder.Property(x => x.ParkingSpotId)
-                .HasConversion(x => x.Value, x => new ParkingSpotId(x));
             builder.Property(x => x.Capacity)
                 .IsRequired()
-                .HasConversion(x => x.Value, x => new Capacity(x));
+                .HasConversion(x => x.Value, x => new(x));
             builder.Property(x => x.Date)
+                .IsRequired()
                 .HasConversion(x => x.Value, x => new Date(x));
 
             builder

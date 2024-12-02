@@ -13,6 +13,25 @@ Content-Type: application/json
     "role": "user"
 }
 
+
+###
+# @name sign_in
+POST {{url}}/users/sign-in
+Content-Type: application/json
+{
+    "email": "user1@myspot.io",
+    "password": "secret",
+}
+
+###
+@accessToken ={{sign_in.response.body.$.accessToken}}
+
+
+###
+GET {{url}}/users/me
+Authorization: Bearer {{accessToken}}
+
+
 ###
 GET {{url}}/users
 
