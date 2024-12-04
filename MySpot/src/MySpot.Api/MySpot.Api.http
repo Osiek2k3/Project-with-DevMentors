@@ -1,26 +1,26 @@
 //@MySpot.Api_HostAddress = http://localhost:5000
 @url = http://localhost:5000
 @reservationId = b21d1c76-6890-452d-8151-365b1c538b03
-@parkingSpotId = 00000000-0000-0000-0000-000000000003
+@parkingSpotId = 00000000-0000-0000-0000-000000000001
 ###
 POST {{url}}/users
 Content-Type: application/json
 {
-    "email": "user1@myspot.io",
-    "username": "user1",
+    "email": "admin@myspot.io",
+    "username": "admin",
     "password": "secret",
     "fullName": "John Doe",
-    "role": "user"
+    "role": "admin"
 }
 
 
 ###
-# @name sign_in
+@name sign_in
 POST {{url}}/users/sign-in
 Content-Type: application/json
 {
-    "email": "user1@myspot.io",
-    "password": "secret",
+    "email": "admin@myspot.io",
+    "password": "secret"
 }
 
 ###
@@ -45,7 +45,7 @@ Content-Type: application/json
     "employeeName": "janek Doe",
     "licensePlate": "XYZ1235",
     "capacity": 1,
-    "date": "2024-11-08"
+    "date": "2024-12-03"
 }
 ###
 POST {{url}}/parking-spots/reservations/cleaning

@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using MySpot.Application.DTO;
 using MySpot.Application.Security;
 using MySpot.Core.Abstractions;
+using MySpot.Core.ValueObjects;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -29,7 +30,7 @@ internal sealed class Authenticator : IAuthenticator
                 SecurityAlgorithms.HmacSha256);
     }
 
-    public JwtDto CreateToken(Guid userId, string role)
+    public JwtDto CreateToken(UserId userId, string role)
     {
         var now = _clock.Current();
         var claims = new List<Claim>

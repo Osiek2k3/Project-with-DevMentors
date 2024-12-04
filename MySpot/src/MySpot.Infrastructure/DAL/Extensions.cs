@@ -17,8 +17,7 @@ namespace MySpot.Infrastructure.DAL
 
         public static IServiceCollection AddPostgres(this IServiceCollection services, IConfiguration configuration)
         {
-            var section = configuration.GetSection(SectionName);
-            services.Configure<PostgresOptions>(section);
+            services.Configure<PostgresOptions>(configuration.GetRequiredSection(SectionName));
             var options = configuration.GetOptions<PostgresOptions>(SectionName);
 
             services.AddDbContext<MySpotDbContext>(x => x.UseNpgsql(options.ConnectionString));

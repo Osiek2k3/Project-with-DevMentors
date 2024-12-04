@@ -19,7 +19,7 @@ namespace MySpot.Infrastructure.DAL
                 await _dbContext.SaveChangesAsync();
                 await transaction.CommitAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 await transaction.RollbackAsync();
                 throw;

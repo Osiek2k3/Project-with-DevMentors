@@ -1,10 +1,11 @@
 ﻿
 using MySpot.Application.DTO;
+using MySpot.Core.ValueObjects;
 
 namespace MySpot.Application.Security
 {
     public interface IAuthenticator
     {
-        JwtDto CreateToken(Guid userId, string role);
+        JwtDto CreateToken(UserId userId, string role);
     }
 }

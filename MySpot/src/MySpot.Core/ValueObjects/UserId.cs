@@ -6,6 +6,7 @@ namespace MySpot.Core.ValueObjects
     {
         public Guid Value { get; }
 
+        public UserId() { }
         public UserId(Guid value)
         {
             if (value == Guid.Empty)
