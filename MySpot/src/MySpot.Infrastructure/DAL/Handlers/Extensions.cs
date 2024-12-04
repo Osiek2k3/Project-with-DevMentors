@@ -16,9 +16,7 @@ namespace MySpot.Infrastructure.DAL.Handlers
                 Reservations = entity.Reservations.Select(x => new ReservationDTO
                 {
                     Id = x.Id,
-                    ParkingSpotId = x.ParkingSpotId,
-                    EmployeeName = x is VehicleReservation vr ? vr.EmployeeName : null ,
-                    Type = x is VehicleReservation ? "vehicle" : "cleaning",
+                    EmployeeName = x is VehicleReservation vr ? vr.EmployeeName : null,
                     Date = x.Date.Value.Date
                 })
             };

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MySpot.Core.Entities;
+using MySpot.Core.ValueObjects;
 using MySpot.Infrastructure.DAL.Configurations;
 
 namespace MySpot.Infrastructure.DAL
@@ -16,6 +17,7 @@ namespace MySpot.Infrastructure.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<UserId>();
             modelBuilder.ApplyConfiguration(new CleaningReservationConfiguration());
             modelBuilder.ApplyConfiguration(new VehicleReservationConfiguration());
             modelBuilder.ApplyConfiguration(new ReservationConfiguration());
