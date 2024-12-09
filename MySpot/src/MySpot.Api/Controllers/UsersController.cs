@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MySpot.Application.Abstractions;
 using MySpot.Application.Commands;
 using MySpot.Application.DTO;
 using MySpot.Application.Queries;
 using MySpot.Application.Security;
+using MySpot.Infrastructure.DAL.Migrations;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MySpot.Api.Controllers
 {
@@ -33,6 +36,8 @@ namespace MySpot.Api.Controllers
 
         [Authorize(Policy = "is-admin")]
         [HttpGet("{userId:guid}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<UserDto>> Get(Guid userId)
         {
             var user = await _getUserHandler.HandleAsync(new GetUser { UserId = userId });
@@ -45,6 +50,8 @@ namespace MySpot.Api.Controllers
         }
 
         [Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [HttpGet("me")]
         public async Task<ActionResult<UserDto>> Get()
         {
@@ -52,19 +59,31 @@ namespace MySpot.Api.Controllers
             {
                 return NotFound();
             }
+            
+            string pattern = @"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
 
-            var userId = Guid.Parse(User.Identity?.Name);
+            Match match = Regex.Match(User.Identity?.Name, pattern);
+            string guidString = match.Value;
+
+            var userId = Guid.Parse(guidString);
             var user = await _getUserHandler.HandleAsync(new GetUser { UserId = userId });
 
             return user;
         }
 
         [HttpGet]
+        [SwaggerOperation("Get list of all the users")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [Authorize(Policy = "is-admin")]
         public async Task<ActionResult<IEnumerable<UserDto>>> Get([FromQuery] GetUsers query)
             => Ok(await _getUsersHandler.HandleAsync(query));
 
         [HttpPost]
+        [SwaggerOperation("Create the user account")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> Post(SignUp command)
         {
             command = command with { UserId = Guid.NewGuid() };
@@ -73,6 +92,9 @@ namespace MySpot.Api.Controllers
         }
 
         [HttpPost("sign-in")]
+        [SwaggerOperation("Sign in the user and return the JSON Web Token")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<JwtDto>> Post(SignIn command)
         {
             await _signInHandler.HandleAsync(command);

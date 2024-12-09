@@ -24,12 +24,12 @@ Content-Type: application/json
 }
 
 ###
-@accessToken ={{sign_in.response.body.$.accessToken}}
+@accessToken ={{sign_in.response.body.accessToken}}
 
 
 ###
 GET {{url}}/users/me
-Authorization: Bearer {{accessToken}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJVc2VySWQgeyBWYWx1ZSA9IGI4NjFkZTIzLThiNzQtNDQ2NC05MzFlLTA0ZDM4ZTg1Y2ZjOCB9IiwidW5pcXVlX25hbWUiOiJVc2VySWQgeyBWYWx1ZSA9IGI4NjFkZTIzLThiNzQtNDQ2NC05MzFlLTA0ZDM4ZTg1Y2ZjOCB9IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE3MzM3NDk1NTEsImV4cCI6MTczMzc1MzE1MSwiaXNzIjoibXlzcG90LWlzc3VlciIsImF1ZCI6Im15c3BvdC1hdWRpZW5jZSJ9.7oqTVQI3e2-5YiEFm1tIwymGygViglSFUR1NMKhSZwo
 
 
 ###
