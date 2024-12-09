@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MySpot.Application.Abstractions;
 using MySpot.Application.Commands;
@@ -30,12 +31,19 @@ namespace MySpot.Api.Controllers
         [HttpPost("{parkingSpotId:guid}/reservations/vehicle")]
         public async Task<ActionResult> Post(Guid parkingSpotId, ReserveParkingSpotForVehicle command)
         {
+            string pattern = @"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
+            Match match = Regex.Match(User.Identity?.Name, pattern);
+
+            string guidString = match.Value;
+            var userId = Guid.Parse(guidString);
+
             await _reserveParkingSpotsForVehicleHandler.HandleAsync(command with
             {
                 ReservationId = Guid.NewGuid(),
                 ParkingSpotId = parkingSpotId,
-                UserId = Guid.Parse(User.Identity.Name)
+                UserId = userId
             });
+
             return NoContent();
         }
 

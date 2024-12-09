@@ -20,25 +20,17 @@ namespace MySpot.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services,IConfiguration configuration)
         {
             services.AddControllers();
-            var section = configuration.GetSection("app");
-            services.Configure<AppOptions>(section);
+            services.Configure<AppOptions>(configuration.GetRequiredSection("app"));
             services.AddSingleton<ExceptionMiddleware>();
-            services.AddSecurity();
-            services.AddAuth(configuration);
             services.AddHttpContextAccessor();
 
             services
                 .AddPostgres(configuration)
+                // .AddSingleton<IWeeklyParkingSpotRepository, InMemoryWeeklyParkingSpotRepository>()
                 .AddSingleton<IClock, Clock>();
 
-            var infrastructureAssembly = typeof(AppOptions).Assembly;
-            services.Scan(s => s.FromAssemblies(infrastructureAssembly)
-                .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
-                .AsImplementedInterfaces()
-                .WithScopedLifetime()
-            );
-              
             services.AddCustomLogging();
+            services.AddSecurity();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(swagger =>
             {
@@ -48,7 +40,42 @@ namespace MySpot.Infrastructure
                     Title = "MySpot API",
                     Version = "v1"
                 });
+
+                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' followed by a space and your JWT token.\nExample: Bearer eyJhbGciOiJIUzI1NiIs..."
+                });
+
+                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+
             });
+
+            var infrastructureAssembly = typeof(AppOptions).Assembly;
+
+            services.Scan(s => s.FromAssemblies(infrastructureAssembly)
+                .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
+                .AsImplementedInterfaces()
+                .WithScopedLifetime());
+
+            services.AddAuth(configuration);
 
             return services;
         }
@@ -56,17 +83,27 @@ namespace MySpot.Infrastructure
         {
             app.UseMiddleware<ExceptionMiddleware>();
             app.UseSwagger();
-            app.UseReDoc(reDoc =>
+            app.UseSwaggerUI();
+            /*app.UseReDoc(reDoc =>
             {
                 reDoc.RoutePrefix = "docs";
                 reDoc.DocumentTitle = "MySpot API";
                 reDoc.SpecUrl("/swagger/v1/swagger.json");
-            });
+            });*/
             app.UseAuthentication();
             app.UseAuthorization(); 
             app.MapControllers();
 
             return app;
+        }
+
+        public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : class, new()
+        {
+            var options = new T();
+            var section = configuration.GetRequiredSection(sectionName);
+            section.Bind(options);
+
+            return options;
         }
     }
 }
