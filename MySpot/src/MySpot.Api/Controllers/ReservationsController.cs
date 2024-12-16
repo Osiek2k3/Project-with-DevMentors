@@ -47,6 +47,7 @@ namespace MySpot.Api.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpPost("reservations/cleaning")]
         public async Task<ActionResult> Post(ReserveParkingSpotForCleaning command)
         {
@@ -54,6 +55,7 @@ namespace MySpot.Api.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpPut("reservations/{reservationId:guid}")]
         public async Task<ActionResult> Put(Guid reservationId, ChangeReservationLicensePlate command)
         {
@@ -61,6 +63,7 @@ namespace MySpot.Api.Controllers
             return NoContent();
         }
 
+        [Authorize]
         [HttpDelete("reservations/{reservationId:guid}")]
         public async Task<ActionResult> Delete(Guid reservationId)
         {
