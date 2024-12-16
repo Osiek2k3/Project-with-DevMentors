@@ -40,4 +40,9 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<InternalVisibleTo Include="My.Spot.Tests.Unit" />
+		<InternalVisibleTo Include="MySpot.Tests.Integration" />
+	</ItemGroup>
+
 </Project>

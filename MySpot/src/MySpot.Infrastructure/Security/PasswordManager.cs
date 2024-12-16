@@ -5,7 +5,7 @@ using MySpot.Core.Entities;
 
 namespace MySpot.Infrastructure.Security
 {
-    internal sealed class PasswordManager : IPasswordManager
+    public sealed class PasswordManager : IPasswordManager
     {
         private readonly IPasswordHasher<User> _passwordHasher;
 

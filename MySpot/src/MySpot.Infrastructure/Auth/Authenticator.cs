@@ -10,7 +10,7 @@ using System.Text;
 
 namespace MySpot.Infrastructure.Auth;
 
-internal sealed class Authenticator : IAuthenticator
+public sealed class Authenticator : IAuthenticator
 {
     private readonly IClock _clock;
     private readonly string _issuer;
