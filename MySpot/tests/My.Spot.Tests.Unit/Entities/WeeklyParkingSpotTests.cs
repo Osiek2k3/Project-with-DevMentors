@@ -26,7 +26,7 @@ namespace My.Spot.Tests.Unit.Entities
             exception.ShouldBeOfType<InvalidReservationDataException>();
         }
 
-        /*[Fact]
+        [Fact]
         public void given_reservation_for_already_existing_date_add_reservation_should_fail()
         {
             //ARRANGE
@@ -40,7 +40,7 @@ namespace My.Spot.Tests.Unit.Entities
             //ASSERT
             exception.ShouldNotBeNull();
             exception.ShouldBeOfType<ParkingSpotAlreadyReservedException>();
-        }*/
+        }
 
         [Fact]
         public void given_reservation_for_not_taken_date_add_reservation_should_succeed()
